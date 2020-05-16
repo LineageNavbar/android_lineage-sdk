@@ -150,69 +150,39 @@
          config to 7. -->
     <integer name="config_deviceHardwareWakeKeys">64</integer>
 
-    <!-- Control the behavior when the user long presses the home button.
+    <!-- Control the behavior when the user long presses or double taps a button.
             0 - Nothing
-            1 - Menu key
-            2 - Recent apps view in SystemUI
-            3 - Launch assist intent
-            4 - Voice Search
-            5 - In-app Search
-            6 - Launch camera
-            7 - Sleep
-            8 - Last app
-            9 - Toggle split screen
+            1 - Menu
+            2 - App-switch
+            3 - Search
+            4 - Voice search
+            5 - Launch Camera
+            6 - Screen off
+            7 - Last app
+            8 - Toggle split screen
+            9 - Flashlight
+            10 - Clear notifications
+            11 - Volume panel
+            12 - Notifications
+            13 - Power menu
+            14 - Screenshot
+            15 - QS panel
+            16 - Custom app
+            17 - Ringer modes
+            18 - Kill app
          This needs to match the enums in
          sdk/src/java/org/lineageos/internal/util/DeviceKeysConstants.java.
     -->
     <integer name="config_longPressOnHomeBehavior">3</integer>
-
-    <!-- Control the behavior when the user double-taps the home button.
-            0 - Nothing
-            1 - Menu key
-            2 - Recent apps view in SystemUI
-            3 - Launch assist intent
-            4 - Voice Search
-            5 - In-app Search
-            6 - Launch camera
-            7 - Sleep
-            8 - Last app
-            9 - Toggle split screen
-         This needs to match the enums in
-         sdk/src/java/org/lineageos/internal/util/DeviceKeysConstants.java.
-    -->
     <integer name="config_doubleTapOnHomeBehavior">0</integer>
-
-    <!-- Control the behavior when the user long presses the menu button.
-            0 - Nothing
-            1 - Menu key
-            2 - Recent apps view in SystemUI
-            3 - Launch assist intent
-            4 - Voice Search
-            5 - In-app Search
-            6 - Launch camera
-            7 - Sleep
-            8 - Last app
-            9 - Toggle split screen
-         This needs to match the enums in
-         sdk/src/java/org/lineageos/internal/util/DeviceKeysConstants.java.
-    -->
-    <integer name="config_longPressOnMenuBehavior">2</integer>
-
-    <!-- Control the behavior when the user long presses the app switch button.
-            0 - Nothing
-            1 - Menu key
-            2 - Recent apps view in SystemUI
-            3 - Launch assist intent
-            4 - Voice Search
-            5 - In-app Search
-            6 - Launch camera
-            7 - Sleep
-            8 - Last app
-            9 - Toggle split screen
-         This needs to match the enums in
-         sdk/src/java/org/lineageos/internal/util/DeviceKeysConstants.java.
-    -->
-    <integer name="config_longPressOnAppSwitchBehavior">9</integer>
+    <integer name="config_longPressOnBackBehavior">18</integer>
+    <integer name="config_doubleTapOnBackBehavior">0</integer>
+    <integer name="config_longPressOnAppSwitchBehavior">1</integer>
+    <integer name="config_doubleTapOnAppSwitchBehavior">0</integer>
+    <integer name="config_longPressOnMenuBehavior">0</integer>
+    <integer name="config_doubleTapOnMenuBehavior">0</integer>
+    <integer name="config_longPressOnAssistBehavior">0</integer>
+    <integer name="config_doubleTapOnAssistBehavior">0</integer>
 
     <!-- Indicates that the device has Single-stage Camera key
          (without "Focus" state) instead of Dual-stage. -->

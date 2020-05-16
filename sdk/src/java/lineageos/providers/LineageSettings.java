@@ -1050,19 +1050,26 @@ public final class LineageSettings {
          * 2 - App-switch
          * 3 - Search
          * 4 - Voice search
-         * 5 - In-app search
-         * 6 - Launch Camera
-         * 7 - Action Sleep
-         * 8 - Last app
-         * 9 - Toggle split screen
-         * 10 - Single hand (left)
-         * 11 - Single hand (right)
+         * 5 - Launch Camera
+         * 6 - Screen off
+         * 7 - Last app
+         * 8 - Toggle split screen
+         * 9 - Flashlight
+         * 10 - Clear notifications
+         * 11 - Volume panel
+         * 12 - Notifications
+         * 13 - Power menu
+         * 14 - Screenshot
+         * 15 - QS panel
+         * 16 - Custom app
+         * 17 - Ringer modes
+         * 18 - Kill app
          */
         public static final String KEY_HOME_LONG_PRESS_ACTION = "key_home_long_press_action";
 
         /** @hide */
         public static final Validator KEY_HOME_LONG_PRESS_ACTION_VALIDATOR =
-                new InclusiveIntegerRangeValidator(0, 9);
+                new InclusiveIntegerRangeValidator(0, 18);
 
         /**
          * Action to perform when the home key is double-tapped.
@@ -1073,7 +1080,7 @@ public final class LineageSettings {
 
         /** @hide */
         public static final Validator KEY_HOME_DOUBLE_TAP_ACTION_VALIDATOR =
-                new InclusiveIntegerRangeValidator(0, 9);
+                new InclusiveIntegerRangeValidator(0, 18);
 
         /**
          * Whether to wake the screen with the back key, the value is boolean.
@@ -1122,7 +1129,7 @@ public final class LineageSettings {
 
         /** @hide */
         public static final Validator KEY_MENU_ACTION_VALIDATOR =
-                new InclusiveIntegerRangeValidator(0, 9);
+                new InclusiveIntegerRangeValidator(0, 18);
 
         /**
          * Action to perform when the menu key is long-pressed.
@@ -1133,7 +1140,7 @@ public final class LineageSettings {
 
         /** @hide */
         public static final Validator KEY_MENU_LONG_PRESS_ACTION_VALIDATOR =
-                new InclusiveIntegerRangeValidator(0, 9);
+                new InclusiveIntegerRangeValidator(0, 18);
 
         /**
          * Action to perform when the assistant (search) key is pressed. (Default is 3)
@@ -1143,7 +1150,7 @@ public final class LineageSettings {
 
         /** @hide */
         public static final Validator KEY_ASSIST_ACTION_VALIDATOR =
-                new InclusiveIntegerRangeValidator(0, 9);
+                new InclusiveIntegerRangeValidator(0, 18);
 
         /**
          * Action to perform when the assistant (search) key is long-pressed. (Default is 4)
@@ -1153,7 +1160,7 @@ public final class LineageSettings {
 
         /** @hide */
         public static final Validator KEY_ASSIST_LONG_PRESS_ACTION_VALIDATOR =
-                new InclusiveIntegerRangeValidator(0, 9);
+                new InclusiveIntegerRangeValidator(0, 18);
 
         /**
          * Action to perform when the app switch key is pressed. (Default is 2)
@@ -1163,7 +1170,7 @@ public final class LineageSettings {
 
         /** @hide */
         public static final Validator KEY_APP_SWITCH_ACTION_VALIDATOR =
-                new InclusiveIntegerRangeValidator(0, 9);
+                new InclusiveIntegerRangeValidator(0, 18);
 
         /**
          * Action to perform when the app switch key is long-pressed. (Default is 0)
@@ -1173,7 +1180,7 @@ public final class LineageSettings {
 
         /** @hide */
         public static final Validator KEY_APP_SWITCH_LONG_PRESS_ACTION_VALIDATOR =
-                new InclusiveIntegerRangeValidator(0, 9);
+                new InclusiveIntegerRangeValidator(0, 18);
 
         /**
          * Action to perform when the screen edge is long-swiped. (Default is 0)
@@ -2109,6 +2116,254 @@ public final class LineageSettings {
                 sBooleanValidator;
 
         /**
+         * Action to perform when the back key is long-pressed.
+         * (Default can be configured via config_longPressOnHardwareBackBehavior)
+         * (See KEY_HOME_LONG_PRESS_ACTION for valid values)
+         * @hide
+         */
+        public static final String KEY_BACK_LONG_PRESS_ACTION = "key_back_long_press_action";
+
+        /** @hide */
+        public static final Validator KEY_BACK_LONG_PRESS_ACTION_VALIDATOR =
+                new InclusiveIntegerRangeValidator(0, 18);
+
+        /**
+         * Action to perform when the back key is double-tapped.
+         * (Default can be configured via config_doubleTapOnHardwareBackBehavior)
+         * (See KEY_HOME_LONG_PRESS_ACTION for valid values)
+         * @hide
+         */
+        public static final String KEY_BACK_DOUBLE_TAP_ACTION = "key_back_double_tap_action";
+
+        /** @hide */
+        public static final Validator KEY_BACK_DOUBLE_TAP_ACTION_VALIDATOR =
+                new InclusiveIntegerRangeValidator(0, 18);
+
+        /**
+         * Action to perform when the app switch key is double-tapped.
+         * (Default can be configured via config_doubleTapOnHardwareAppSwitchBehavior)
+         * (See KEY_HOME_LONG_PRESS_ACTION for valid values)
+         * @hide
+         */
+        public static final String KEY_APP_SWITCH_DOUBLE_TAP_ACTION = "key_app_switch_double_tap_action";
+
+        /** @hide */
+        public static final Validator KEY_APP_SWITCH_DOUBLE_TAP_ACTION_VALIDATOR =
+                new InclusiveIntegerRangeValidator(0, 18);
+
+        /**
+         * Action to perform when the menu key is double-tapped.
+         * (Default can be configured via config_doubleTapOnHardwareMenuBehavior)
+         * (See KEY_HOME_LONG_PRESS_ACTION for valid values)
+         * @hide
+         */
+        public static final String KEY_MENU_DOUBLE_TAP_ACTION = "key_menu_double_tap_action";
+
+        /** @hide */
+        public static final Validator KEY_MENU_DOUBLE_TAP_ACTION_VALIDATOR =
+                new InclusiveIntegerRangeValidator(0, 18);
+
+        /**
+         * Action to perform when the assist key is double-tapped.
+         * (Default can be configured via config_doubleTapOnHardwareAssistBehavior)
+         * (See KEY_HOME_LONG_PRESS_ACTION for valid values)
+         * @hide
+         */
+        public static final String KEY_ASSIST_DOUBLE_TAP_ACTION = "key_assist_double_tap_action";
+
+        /** @hide */
+        public static final Validator KEY_ASSIST_DOUBLE_TAP_ACTION_VALIDATOR =
+                new InclusiveIntegerRangeValidator(0, 18);
+
+        /**
+         * Launch custom application when home key is long-pressed.
+         * @hide
+         */
+        public static final String KEY_HOME_LONG_PRESS_CUSTOM_APP = "key_home_long_press_custom_app";
+
+        /** @hide */
+        public static final Validator KEY_HOME_LONG_PRESS_CUSTOM_APP_VALIDATOR =
+                sNonNullStringValidator;
+
+        /**
+         * Launch custom activity when home key is long-pressed.
+         * @hide
+         */
+        public static final String KEY_HOME_LONG_PRESS_CUSTOM_ACTIVITY = "key_home_long_press_custom_activity";
+
+        /** @hide */
+        public static final Validator KEY_HOME_LONG_PRESS_CUSTOM_ACTIVITY_VALIDATOR =
+                sNonNullStringValidator;
+
+        /**
+         * Display friendly name of custom application launched when
+         * home key is long-pressed.
+         * @hide
+         */
+        public static final String KEY_HOME_LONG_PRESS_CUSTOM_APP_FR_NAME = "key_home_long_press_custom_app_fr_name";
+
+        /** @hide */
+        public static final Validator KEY_HOME_LONG_PRESS_CUSTOM_APP_FR_NAME_VALIDATOR =
+                sNonNullStringValidator;
+
+        /**
+         * Launch custom application when home key is double-tapped.
+         * @hide
+         */
+        public static final String KEY_HOME_DOUBLE_TAP_CUSTOM_APP = "key_home_double_tap_custom_app";
+
+        /** @hide */
+        public static final Validator KEY_HOME_DOUBLE_TAP_CUSTOM_APP_VALIDATOR =
+                sNonNullStringValidator;
+
+        /**
+         * Launch custom activity when home key is double-tapped.
+         * @hide
+         */
+        public static final String KEY_HOME_DOUBLE_TAP_CUSTOM_ACTIVITY = "key_home_double_tap_custom_activity";
+
+        /** @hide */
+        public static final Validator KEY_HOME_DOUBLE_TAP_CUSTOM_ACTIVITY_VALIDATOR =
+                sNonNullStringValidator;
+
+        /**
+         * Display friendly name of custom application launched when
+         * home key is double-tapped.
+         * @hide
+         */
+        public static final String KEY_HOME_DOUBLE_TAP_CUSTOM_APP_FR_NAME = "key_home_double_tap_custom_app_fr_name";
+
+
+        /** @hide */
+        public static final Validator KEY_HOME_DOUBLE_TAP_CUSTOM_APP_FR_NAME_VALIDATOR =
+                sNonNullStringValidator;
+        /**
+         * Launch custom application when back key is long-pressed.
+         * @hide
+         */
+        public static final String KEY_BACK_LONG_PRESS_CUSTOM_APP = "key_back_long_press_custom_app";
+
+        /** @hide */
+        public static final Validator KEY_BACK_LONG_PRESS_CUSTOM_APP_VALIDATOR =
+                sNonNullStringValidator;
+
+        /**
+         * Launch custom activity when back key is long-pressed.
+         * @hide
+         */
+        public static final String KEY_BACK_LONG_PRESS_CUSTOM_ACTIVITY = "key_back_long_press_custom_activity";
+
+        /** @hide */
+        public static final Validator KEY_BACK_LONG_PRESS_CUSTOM_ACTIVITY_VALIDATOR =
+                sNonNullStringValidator;
+
+        /**
+         * Display friendly name of custom application launched when
+         * back key is long-pressed.
+         * @hide
+         */
+        public static final String KEY_BACK_LONG_PRESS_CUSTOM_APP_FR_NAME = "key_back_long_press_custom_app_fr_name";
+
+        /** @hide */
+        public static final Validator KEY_BACK_LONG_PRESS_CUSTOM_APP_FR_NAME_VALIDATOR =
+                sNonNullStringValidator;
+
+        /**
+         * Launch custom application when back key is double tapped.
+         * @hide
+         */
+        public static final String KEY_BACK_DOUBLE_TAP_CUSTOM_APP = "key_back_double_tap_custom_app";
+
+        /** @hide */
+        public static final Validator KEY_BACK_DOUBLE_TAP_CUSTOM_APP_VALIDATOR =
+                sNonNullStringValidator;
+
+        /**
+         * Launch custom activity when back key is double tapped.
+         * @hide
+         */
+        public static final String KEY_BACK_DOUBLE_TAP_CUSTOM_ACTIVITY = "key_back_double_tap_custom_activity";
+
+        /** @hide */
+        public static final Validator KEY_BACK_DOUBLE_TAP_CUSTOM_ACTIVITY_VALIDATOR =
+                sNonNullStringValidator;
+
+        /**
+         * Display friendly name of custom application launched when
+         * back key is double-tapped.
+         * @hide
+         */
+        public static final String KEY_BACK_DOUBLE_TAP_CUSTOM_APP_FR_NAME = "key_back_double_tap_custom_app_fr_name";
+
+        /** @hide */
+        public static final Validator KEY_BACK_DOUBLE_TAP_CUSTOM_APP_FR_NAME_VALIDATOR =
+                sNonNullStringValidator;
+
+        /**
+         * Launch custom application when app switch key is long-pressed.
+         * @hide
+         */
+        public static final String KEY_APP_SWITCH_LONG_PRESS_CUSTOM_APP = "key_app_switch_long_press_custom_app";
+
+        /** @hide */
+        public static final Validator KEY_APP_SWITCH_LONG_PRESS_CUSTOM_APP_VALIDATOR =
+                sNonNullStringValidator;
+
+        /**
+         * Launch custom activity when app switch key is long-pressed.
+         * @hide
+         */
+        public static final String KEY_APP_SWITCH_LONG_PRESS_CUSTOM_ACTIVITY = "key_app_switch_long_press_custom_activity";
+
+        /** @hide */
+        public static final Validator KEY_APP_SWITCH_LONG_PRESS_CUSTOM_ACTIVITY_VALIDATOR =
+                sNonNullStringValidator;
+
+        /**
+         * Display friendly name of custom application launched when
+         * app switch key is long-pressed.
+         * @hide
+         */
+        public static final String KEY_APP_SWITCH_LONG_PRESS_CUSTOM_APP_FR_NAME =
+                "key_app_switch_long_press_custom_app_fr_name";
+
+        /** @hide */
+        public static final Validator KEY_APP_SWITCH_LONG_PRESS_CUSTOM_APP_FR_NAME_VALIDATOR =
+                sNonNullStringValidator;
+
+        /**
+         * Launch custom application when app switch key is double-tapped.
+         * @hide
+         */
+        public static final String KEY_APP_SWITCH_DOUBLE_TAP_CUSTOM_APP = "key_app_switch_double_tap_custom_app";
+
+        /** @hide */
+        public static final Validator KEY_APP_SWITCH_DOUBLE_TAP_CUSTOM_APP_VALIDATOR =
+                sNonNullStringValidator;
+
+        /**
+         * Launch custom activity when app switch key is double-tapped.
+         * @hide
+         */
+        public static final String KEY_APP_SWITCH_DOUBLE_TAP_CUSTOM_ACTIVITY = "key_app_switch_double_tap_custom_activity";
+
+        /** @hide */
+        public static final Validator KEY_APP_SWITCH_DOUBLE_TAP_CUSTOM_ACTIVITY_VALIDATOR =
+                sNonNullStringValidator;
+
+        /**
+         * Display friendly name of custom application launched when
+         * app switch key is double-tapped.
+         * @hide
+         */
+        public static final String KEY_APP_SWITCH_DOUBLE_TAP_CUSTOM_APP_FR_NAME =
+                "key_app_switch_double_tap_custom_app_fr_name";
+
+        /** @hide */
+        public static final Validator KEY_APP_SWITCH_DOUBLE_TAP_CUSTOM_APP_FR_NAME_VALIDATOR =
+                sNonNullStringValidator;
+
+        /**
          * I can haz more bukkits
          * @hide
          */
@@ -2387,6 +2642,29 @@ public final class LineageSettings {
                     CLICK_PARTIAL_SCREENSHOT_VALIDATOR);
             VALIDATORS.put(__MAGICAL_TEST_PASSING_ENABLER,
                     __MAGICAL_TEST_PASSING_ENABLER_VALIDATOR);
+            VALIDATORS.put(KEY_BACK_LONG_PRESS_ACTION, KEY_BACK_LONG_PRESS_ACTION_VALIDATOR);
+            VALIDATORS.put(KEY_BACK_DOUBLE_TAP_ACTION, KEY_BACK_DOUBLE_TAP_ACTION_VALIDATOR);
+            VALIDATORS.put(KEY_APP_SWITCH_DOUBLE_TAP_ACTION, KEY_APP_SWITCH_DOUBLE_TAP_ACTION_VALIDATOR);
+            VALIDATORS.put(KEY_MENU_DOUBLE_TAP_ACTION, KEY_MENU_DOUBLE_TAP_ACTION_VALIDATOR);
+            VALIDATORS.put(KEY_ASSIST_DOUBLE_TAP_ACTION, KEY_ASSIST_DOUBLE_TAP_ACTION_VALIDATOR);
+            VALIDATORS.put(KEY_HOME_LONG_PRESS_CUSTOM_APP, KEY_HOME_LONG_PRESS_CUSTOM_APP_VALIDATOR);
+            VALIDATORS.put(KEY_HOME_LONG_PRESS_CUSTOM_ACTIVITY, KEY_HOME_LONG_PRESS_CUSTOM_ACTIVITY_VALIDATOR);
+            VALIDATORS.put(KEY_HOME_LONG_PRESS_CUSTOM_APP_FR_NAME, KEY_HOME_LONG_PRESS_CUSTOM_APP_FR_NAME_VALIDATOR);
+            VALIDATORS.put(KEY_HOME_DOUBLE_TAP_CUSTOM_APP, KEY_HOME_DOUBLE_TAP_CUSTOM_APP_VALIDATOR);
+            VALIDATORS.put(KEY_HOME_DOUBLE_TAP_CUSTOM_ACTIVITY, KEY_HOME_DOUBLE_TAP_CUSTOM_ACTIVITY_VALIDATOR);
+            VALIDATORS.put(KEY_HOME_DOUBLE_TAP_CUSTOM_APP_FR_NAME, KEY_HOME_DOUBLE_TAP_CUSTOM_APP_FR_NAME_VALIDATOR);
+            VALIDATORS.put(KEY_BACK_LONG_PRESS_CUSTOM_APP, KEY_BACK_LONG_PRESS_CUSTOM_APP_VALIDATOR);
+            VALIDATORS.put(KEY_BACK_LONG_PRESS_CUSTOM_ACTIVITY, KEY_BACK_LONG_PRESS_CUSTOM_ACTIVITY_VALIDATOR);
+            VALIDATORS.put(KEY_BACK_LONG_PRESS_CUSTOM_APP_FR_NAME, KEY_BACK_LONG_PRESS_CUSTOM_APP_FR_NAME_VALIDATOR);
+            VALIDATORS.put(KEY_BACK_DOUBLE_TAP_CUSTOM_APP, KEY_BACK_DOUBLE_TAP_CUSTOM_APP_VALIDATOR);
+            VALIDATORS.put(KEY_BACK_DOUBLE_TAP_CUSTOM_ACTIVITY, KEY_BACK_DOUBLE_TAP_CUSTOM_ACTIVITY_VALIDATOR);
+            VALIDATORS.put(KEY_BACK_DOUBLE_TAP_CUSTOM_APP_FR_NAME, KEY_BACK_DOUBLE_TAP_CUSTOM_APP_FR_NAME_VALIDATOR);
+            VALIDATORS.put(KEY_APP_SWITCH_LONG_PRESS_CUSTOM_APP, KEY_APP_SWITCH_LONG_PRESS_CUSTOM_APP_VALIDATOR);
+            VALIDATORS.put(KEY_APP_SWITCH_LONG_PRESS_CUSTOM_ACTIVITY, KEY_APP_SWITCH_LONG_PRESS_CUSTOM_ACTIVITY_VALIDATOR);
+            VALIDATORS.put(KEY_APP_SWITCH_LONG_PRESS_CUSTOM_APP_FR_NAME, KEY_APP_SWITCH_LONG_PRESS_CUSTOM_APP_FR_NAME_VALIDATOR);
+            VALIDATORS.put(KEY_APP_SWITCH_DOUBLE_TAP_CUSTOM_APP, KEY_APP_SWITCH_DOUBLE_TAP_CUSTOM_APP_VALIDATOR);
+            VALIDATORS.put(KEY_APP_SWITCH_DOUBLE_TAP_CUSTOM_ACTIVITY, KEY_APP_SWITCH_DOUBLE_TAP_CUSTOM_ACTIVITY_VALIDATOR);
+            VALIDATORS.put(KEY_APP_SWITCH_DOUBLE_TAP_CUSTOM_APP_FR_NAME, KEY_APP_SWITCH_DOUBLE_TAP_CUSTOM_APP_FR_NAME_VALIDATOR);
         };
         // endregion
     }

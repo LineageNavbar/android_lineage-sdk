@@ -31,13 +31,20 @@ public class DeviceKeysConstants {
         APP_SWITCH,
         SEARCH,
         VOICE_SEARCH,
-        IN_APP_SEARCH,
         LAUNCH_CAMERA,
         SLEEP,
         LAST_APP,
         SPLIT_SCREEN,
-        SINGLE_HAND_LEFT,
-        SINGLE_HAND_RIGHT;
+        FLASHLIGHT,
+        CLEAR_NOTIFICATIONS,
+        VOLUME_PANEL,
+        NOTIFICATIONS,
+        POWER_MENU,
+        SCREENSHOT,
+        QS_PANEL,
+        CUSTOM_APP,
+        RINGER_MODES,
+        KILL_APP;
 
         public static Action fromIntSafe(int id) {
             if (id < NOTHING.ordinal() || id > Action.values().length) {
