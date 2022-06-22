@@ -1092,12 +1092,19 @@ public final class LineageSettings {
          * 8 - Last app
          * 9 - Toggle split screen
          * 10 - Kill foreground app
+         * 11 - Torch
+         * 12 - Screenshot
+         * 13 - Volume Panel
+         * 14 - Clear All Notifications
+         * 15 - Notifications
+         * 16 - Toggle Qs Panel
+         * 17 - Ringer Modes
          */
         public static final String KEY_HOME_LONG_PRESS_ACTION = "key_home_long_press_action";
 
         /** @hide */
         public static final Validator KEY_HOME_LONG_PRESS_ACTION_VALIDATOR =
-                new InclusiveIntegerRangeValidator(0, 10);
+                new InclusiveIntegerRangeValidator(0, 17);
 
         /**
          * Action to perform when the home key is double-tapped.
@@ -1108,7 +1115,7 @@ public final class LineageSettings {
 
         /** @hide */
         public static final Validator KEY_HOME_DOUBLE_TAP_ACTION_VALIDATOR =
-                new InclusiveIntegerRangeValidator(0, 10);
+                new InclusiveIntegerRangeValidator(0, 17);
 
         /**
          * Action to perform when the back key is long-pressed.
@@ -1119,7 +1126,7 @@ public final class LineageSettings {
 
         /** @hide */
         public static final Validator KEY_BACK_LONG_PRESS_ACTION_VALIDATOR =
-                new InclusiveIntegerRangeValidator(0, 10);
+                new InclusiveIntegerRangeValidator(0, 17);
 
         /**
          * Whether to wake the screen with the back key, the value is boolean.
@@ -1168,7 +1175,7 @@ public final class LineageSettings {
 
         /** @hide */
         public static final Validator KEY_MENU_ACTION_VALIDATOR =
-                new InclusiveIntegerRangeValidator(0, 10);
+                new InclusiveIntegerRangeValidator(0, 17);
 
         /**
          * Action to perform when the menu key is long-pressed.
@@ -1179,7 +1186,7 @@ public final class LineageSettings {
 
         /** @hide */
         public static final Validator KEY_MENU_LONG_PRESS_ACTION_VALIDATOR =
-                new InclusiveIntegerRangeValidator(0, 10);
+                new InclusiveIntegerRangeValidator(0, 17);
 
         /**
          * Action to perform when the assistant (search) key is pressed. (Default is 3)
@@ -1189,7 +1196,7 @@ public final class LineageSettings {
 
         /** @hide */
         public static final Validator KEY_ASSIST_ACTION_VALIDATOR =
-                new InclusiveIntegerRangeValidator(0, 10);
+                new InclusiveIntegerRangeValidator(0, 17);
 
         /**
          * Action to perform when the assistant (search) key is long-pressed. (Default is 4)
@@ -1199,7 +1206,7 @@ public final class LineageSettings {
 
         /** @hide */
         public static final Validator KEY_ASSIST_LONG_PRESS_ACTION_VALIDATOR =
-                new InclusiveIntegerRangeValidator(0, 10);
+                new InclusiveIntegerRangeValidator(0, 17);
 
         /**
          * Action to perform when the app switch key is pressed. (Default is 2)
@@ -1209,7 +1216,7 @@ public final class LineageSettings {
 
         /** @hide */
         public static final Validator KEY_APP_SWITCH_ACTION_VALIDATOR =
-                new InclusiveIntegerRangeValidator(0, 10);
+                new InclusiveIntegerRangeValidator(0, 17);
 
         /**
          * Action to perform when the app switch key is long-pressed. (Default is 0)
@@ -1219,7 +1226,7 @@ public final class LineageSettings {
 
         /** @hide */
         public static final Validator KEY_APP_SWITCH_LONG_PRESS_ACTION_VALIDATOR =
-                new InclusiveIntegerRangeValidator(0, 10);
+                new InclusiveIntegerRangeValidator(0, 17);
 
         /**
          * Action to perform when the screen edge is long-swiped. (Default is 0)
@@ -1229,7 +1236,7 @@ public final class LineageSettings {
 
         /** @hide */
         public static final Validator KEY_EDGE_LONG_SWIPE_ACTION_VALIDATOR =
-                new InclusiveIntegerRangeValidator(0, 10);
+                new InclusiveIntegerRangeValidator(0, 17);
 
         /**
          * Whether to wake the screen with the home key, the value is boolean.
@@ -2046,6 +2053,54 @@ public final class LineageSettings {
                 sNonNegativeIntegerValidator;
 
         /**
+         * Action to perform when the back key is double-tapped.
+         * (Default can be configured via config_doubleTapOnHardwareBackBehavior)
+         * (See KEY_HOME_LONG_PRESS_ACTION for valid values)
+         * @hide
+         */
+        public static final String KEY_BACK_DOUBLE_TAP_ACTION = "key_back_double_tap_action";
+
+        /** @hide */
+        public static final Validator KEY_BACK_DOUBLE_TAP_ACTION_VALIDATOR =
+                new InclusiveIntegerRangeValidator(0, 18);
+
+        /**
+         * Action to perform when the app switch key is double-tapped.
+         * (Default can be configured via config_doubleTapOnHardwareAppSwitchBehavior)
+         * (See KEY_HOME_LONG_PRESS_ACTION for valid values)
+         * @hide
+         */
+        public static final String KEY_APP_SWITCH_DOUBLE_TAP_ACTION = "key_app_switch_double_tap_action";
+
+        /** @hide */
+        public static final Validator KEY_APP_SWITCH_DOUBLE_TAP_ACTION_VALIDATOR =
+                new InclusiveIntegerRangeValidator(0, 18);
+
+        /**
+         * Action to perform when the menu key is double-tapped.
+         * (Default can be configured via config_doubleTapOnHardwareMenuBehavior)
+         * (See KEY_HOME_LONG_PRESS_ACTION for valid values)
+         * @hide
+         */
+        public static final String KEY_MENU_DOUBLE_TAP_ACTION = "key_menu_double_tap_action";
+
+        /** @hide */
+        public static final Validator KEY_MENU_DOUBLE_TAP_ACTION_VALIDATOR =
+                new InclusiveIntegerRangeValidator(0, 18);
+
+        /**
+         * Action to perform when the assist key is double-tapped.
+         * (Default can be configured via config_doubleTapOnHardwareAssistBehavior)
+         * (See KEY_HOME_LONG_PRESS_ACTION for valid values)
+         * @hide
+         */
+        public static final String KEY_ASSIST_DOUBLE_TAP_ACTION = "key_assist_double_tap_action";
+
+        /** @hide */
+        public static final Validator KEY_ASSIST_DOUBLE_TAP_ACTION_VALIDATOR =
+                new InclusiveIntegerRangeValidator(0, 18);
+
+        /**
          * I can haz more bukkits
          * @hide
          */
@@ -2311,6 +2366,11 @@ public final class LineageSettings {
                     ENABLE_TASKBAR_VALIDATOR);
             VALIDATORS.put(FINGERPRINT_WAKE_UNLOCK,
                     FINGERPRINT_WAKE_UNLOCK_VALIDATOR);
+            VALIDATORS.put(KEY_BACK_DOUBLE_TAP_ACTION, KEY_BACK_DOUBLE_TAP_ACTION_VALIDATOR);
+            VALIDATORS.put(KEY_APP_SWITCH_DOUBLE_TAP_ACTION,
+                    KEY_APP_SWITCH_DOUBLE_TAP_ACTION_VALIDATOR);
+            VALIDATORS.put(KEY_MENU_DOUBLE_TAP_ACTION, KEY_MENU_DOUBLE_TAP_ACTION_VALIDATOR);
+            VALIDATORS.put(KEY_ASSIST_DOUBLE_TAP_ACTION, KEY_ASSIST_DOUBLE_TAP_ACTION_VALIDATOR);
             VALIDATORS.put(__MAGICAL_TEST_PASSING_ENABLER,
                     __MAGICAL_TEST_PASSING_ENABLER_VALIDATOR);
         };
